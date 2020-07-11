@@ -3,36 +3,37 @@
 namespace primeira_aula
 {
     class Program
-    {
-        static void Main(string[] args)
-        {
-            
+			{
+				static void Main(string[] args)
+				{
 
-            Console.WriteLine("Qual é seu nome");
+                    Console.WriteLine("Digite seu nome");
+                    string name = Console.ReadLine();
+                    Console.WriteLine("Digite sua idade");
+                    int  userAge = int.Parse(Console.ReadLine());
 
-            var age = 25 ;
+                    bool verifyAge = userAge <= 40;
+                    bool verifyName = name == "Rodrigo";
+                    bool itsTrueverifyname = verifyAge == true && verifyName == true;
+                    Console.WriteLine(itsTrueverifyname);
 
-            var result  = Console.ReadLine( );
+               
+                    Console.WriteLine("Digite seu nome");
+                    string name2 = Console.ReadLine();
+                    bool resp = name2 == "Rodrigo";
 
-            var price = 0.99;
+                    if (resp)
+                    {
+                         Console.WriteLine($"Resposta certa {name2} aguarde os próximos passos");
+                    }
+                    else if(!resp)
+                    {
+                         Console.WriteLine($"Resposta errada{name2} tente novamente!");
+     
+                    }
 
-
-            Console.WriteLine($"Olá, {result} ");
-            Console.WriteLine(age);
-            Console.WriteLine();
-
-            var myBoolean = result == "Rodrigo";
-
-            Console.WriteLine(myBoolean);
-
-
-            
-
-
-
-
-
-            
-        }
-    }
-}
+                     Console.WriteLine("......");   
+					
+				}
+			}
+	}
