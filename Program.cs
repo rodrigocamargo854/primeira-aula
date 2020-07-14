@@ -1,39 +1,81 @@
 ﻿using System;
-
-namespace primeira_aula
+class Program
 {
-    class Program
-			{
-				static void Main(string[] args)
-				{
 
-                    Console.WriteLine("Digite seu nome");
-                    string name = Console.ReadLine();
-                    Console.WriteLine("Digite sua idade");
-                    int  userAge = int.Parse(Console.ReadLine());
+    static void Main(string[] args)
+    {
+        int counter = 0;
+        while (counter <= 10)
+        {
+            Console.WriteLine(counter);
+            counter++;
 
-                    bool verifyAge = userAge <= 40;
-                    bool verifyName = name == "Rodrigo";
-                    bool itsTrueverifyname = verifyAge == true && verifyName == true;
-                    Console.WriteLine(itsTrueverifyname);
+        }
 
-               
-                    Console.WriteLine("Digite seu nome");
-                    string name2 = Console.ReadLine();
-                    bool resp = name2 == "Rodrigo";
+    }
 
-                    if (resp)
-                    {
-                         Console.WriteLine($"Resposta certa {name2} aguarde os próximos passos");
-                    }
-                    else if(!resp)
-                    {
-                         Console.WriteLine($"Resposta errada{name2} tente novamente!");
-     
-                    }
+    static void a()
+    {
+          int counter1 = 10;
+        while (counter1 != 00)
+        {
+            Console.WriteLine(counter1);
+            counter1--;
 
-                     Console.WriteLine("......");   
-					
-				}
-			}
-	}
+        }
+
+
+
+    }
+
+
+    static void b()
+    {
+
+
+    }
+
+    static void c()
+    {
+
+
+    }
+
+    static void exercise2()
+    {
+
+
+    }
+
+    static void exercise3()
+    {
+
+
+    }
+
+    static void exercise4()
+    {
+
+
+    }
+
+    static void exercise5()
+    {
+
+
+    }
+
+    static void exercise6()
+    {
+
+
+    }
+
+    static void exercise7()
+    {
+
+
+    }
+
+}
+
