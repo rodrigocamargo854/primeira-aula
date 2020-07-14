@@ -124,6 +124,8 @@ CTRL + Y
 Comando para abrir o terminal:
 CTRL + '
 
+Para identação automática
+Ctrl + shift +f
 ### Depurando a aplicação
 
 1. Clicar na baratinha e depois no botao de engrenagem;
