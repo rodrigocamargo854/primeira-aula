@@ -4,46 +4,72 @@ class Program
 
     static void Main(string[] args)
     {
-        int counter = 0;
-        while (counter <= 10)
+          var names = new string[5];
+        var counter = 0;
+
+        while (counter < 5)
         {
-            Console.WriteLine(counter);
+            System.Console.WriteLine("Digite um nome");
+            var result = Console.ReadLine();
+
+            names[counter] = result;
             counter++;
+        }
+        foreach(var a in names)
+        {
+            Console.Write($" {a}");
 
         }
 
     }
 
-    static void a()
+    static void b()
     {
-          int counter1 = 10;
-        while (counter1 != 00)
+        int counter1 = 10;
+        while (counter1 != 0)
         {
             Console.WriteLine(counter1);
             counter1--;
 
         }
 
-
-
-    }
-
-
-    static void b()
-    {
-
-
     }
 
     static void c()
     {
+        int counter = 0;
+        while (counter <= 10)
+        {
+            if (counter % 2 == 0)
+            {
+                Console.WriteLine(counter);
+            }
 
+            counter++;
+
+
+        }
 
     }
 
     static void exercise2()
     {
+        var names = new string[5];
+        var counter = 0;
 
+        while (counter < 5)
+        {
+            System.Console.WriteLine("Digite um nome");
+            var result = Console.ReadLine();
+
+            names[counter] = result;
+            counter++;
+        }
+        foreach(var a in names)
+        {
+            Console.WriteLine(a);
+
+        }
 
     }
 
