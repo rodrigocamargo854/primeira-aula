@@ -33,6 +33,8 @@ namespace Program
                         Cands[0] = Console.ReadLine();
                         Console.Write("Nome Candidato2 : ");
                         Cands[1] = Console.ReadLine();
+                        
+                        
 
                     }
                     else
@@ -45,7 +47,7 @@ namespace Program
 
                 }
 
-                 else if (option == 2)
+                else if (option == 2)
                 {
                     while (true)
                     {
@@ -56,11 +58,15 @@ namespace Program
                         if (idCount == 1)
                         {
                             cand1Count++;
+                            Console.Write($"Voto Computado");
+                            Console.ReadKey();
 
                         }
                         else if (idCount == 2)
                         {
                             cand2Count++;
+                            Console.Write($"Voto Computado");
+                            Console.ReadKey();
 
                         }
                         else if (idCount == 3)
@@ -74,169 +80,178 @@ namespace Program
                         Console.Clear();
                     }
 
-
-
                 }
 
-                else  if (option == 3)
+                else if (option == 3)
                 {
-                    Console.WriteLine("APURAÇÂO");
-                    Console.WriteLine("TOTAL DE VOTOS");
-                    Console.WriteLine($"{Cands[0]} votos {cand1Count} ");
-                    Console.WriteLine($"{Cands[1]} votos {cand2Count} ");
-                    Console.ReadKey();
 
                     if (cand1Count > cand2Count)
                     {
-                        Console.Write($"{Cands[0]}  venceu");
+                        Console.Write($"{Cands[0]}  venceu!!   ");
+                        Console.ReadKey();
+                        Console.Clear();
                     }
 
                     else if (cand2Count > cand1Count)
                     {
-                        Console.Write($"{Cands[1]}  venceu");
+                        Console.Write($"{Cands[1]}  venceu!!   ");
+                        Console.ReadKey();
+                        Console.Clear();
                     }
 
-                    else
+                    else if (cand2Count !=0 && (cand1Count == cand2Count) )
                     {
-                        Console.Write(" SEGUNDO TURNO ");
+                        Console.Write(" SEGUNDO TURNO \n");
+                        Console.ReadKey();
+                        Console.Clear();
                     }
+
+                    else if (  cand2Count == 0 && cand1Count == 0 )
+                    {
+                        Console.Write("Não há votos para Apurar ");
+                        Console.ReadKey();
+                        break;
+
+                    }
+
 
                 }
                 else if (option == 0)
                 {
 
                     Console.WriteLine("****FIM DO PROGRAMA *****");
+                    Console.ReadKey();
                     break;
                 }
 
-    }
-
-    
-}
-
-static void c()
-{
-    int counter = 0;
-    while (counter <= 10)
-    {
-        if (counter % 2 == 0)
-        {
-            Console.WriteLine(counter);
-        }
-        counter++;
-
-    }
-}
-
-static void exercise2()
-{
-    var names = new string[5];
-    var counter = 0;
-
-    while (counter < 5)
-    {
-        System.Console.WriteLine("Digite um nome");
-        var result = Console.ReadLine();
-
-        names[counter] = result;
-        counter++;
-    }
-    foreach (var a in names)
-    {
-        Console.WriteLine(a);
-    }
-
-}
-
-static void exercise3()
-{
+            }
 
 
-}
-
-static void exercise4()
-{
-    double ages = 0;
-    double media = 0;
-    int counter = 0;
-    while (true)
-    {
-        Console.WriteLine("Idade: ");
-        ages = double.Parse(Console.ReadLine());
-        ages++;
-        if (ages == 0)
-        {
-            break;
         }
 
-    }
-
-    media = ages / counter;
-    Console.WriteLine($"Média das idade {media.ToString("F2")}");
-}
-
-static void exercise5()
-{
-    var counter = 0;
-    var WomenAges = 0;
-    var ages = new int[5];
-
-    while (counter < 5)
-    {
-        System.Console.Write("Age ");
-        var Ages = Console.ReadLine();
-
-        ages[counter] = int.Parse(Ages);
-        counter++;
-    }
-
-    foreach (var a in ages)
-    {
-        if (a > 18 && a < 35)
+        static void c()
         {
-            WomenAges++;
-        }
-    }
-    var Percent = (WomenAges * 100) / counter;
-    Console.WriteLine($" Percentual de mulheres é {Percent} %");
+            int counter = 0;
+            while (counter <= 10)
+            {
+                if (counter % 2 == 0)
+                {
+                    Console.WriteLine(counter);
+                }
+                counter++;
 
-}
-
-static void exercise6()
-{
-    while (true)
-    {
-        Console.WriteLine("Digite uma opção:");
-        Console.WriteLine("1-Cadastrar\n 2-Votação\n 3-Apuração\n 0-Sair ");
-        var option = int.Parse(Console.ReadLine());
-
-        if (option == 1)
-        {
-            Console.WriteLine("Digitou 1");
+            }
         }
 
-        else if (option == 2)
+        static void exercise2()
         {
-            Console.WriteLine("Digitou 2");
+            var names = new string[5];
+            var counter = 0;
+
+            while (counter < 5)
+            {
+                System.Console.WriteLine("Digite um nome");
+                var result = Console.ReadLine();
+
+                names[counter] = result;
+                counter++;
+            }
+            foreach (var a in names)
+            {
+                Console.WriteLine(a);
+            }
+
         }
 
-        else if (option == 3)
+        static void exercise3()
         {
-            Console.WriteLine("Digitou 1");
+
+
         }
 
-        Console.ReadKey();
+        static void exercise4()
+        {
+            double ages = 0;
+            double media = 0;
+            int counter = 0;
+            while (true)
+            {
+                Console.WriteLine("Idade: ");
+                ages = double.Parse(Console.ReadLine());
+                ages++;
+                if (ages == 0)
+                {
+                    break;
+                }
 
-    }
+            }
 
-}
+            media = ages / counter;
+            Console.WriteLine($"Média das idade {media.ToString("F2")}");
+        }
+
+        static void exercise5()
+        {
+            var counter = 0;
+            var WomenAges = 0;
+            var ages = new int[5];
+
+            while (counter < 5)
+            {
+                System.Console.Write("Age ");
+                var Ages = Console.ReadLine();
+
+                ages[counter] = int.Parse(Ages);
+                counter++;
+            }
+
+            foreach (var a in ages)
+            {
+                if (a > 18 && a < 35)
+                {
+                    WomenAges++;
+                }
+            }
+            var Percent = (WomenAges * 100) / counter;
+            Console.WriteLine($" Percentual de mulheres é {Percent} %");
+
+        }
+
+        static void exercise6()
+        {
+            while (true)
+            {
+                Console.WriteLine("Digite uma opção:");
+                Console.WriteLine("1-Cadastrar\n 2-Votação\n 3-Apuração\n 0-Sair ");
+                var option = int.Parse(Console.ReadLine());
+
+                if (option == 1)
+                {
+                    Console.WriteLine("Digitou 1");
+                }
+
+                else if (option == 2)
+                {
+                    Console.WriteLine("Digitou 2");
+                }
+
+                else if (option == 3)
+                {
+                    Console.WriteLine("Digitou 1");
+                }
+
+                Console.ReadKey();
+
+            }
+
+        }
 
 
-static void exercise7()
-{
+        static void exercise7()
+        {
 
 
-}
+        }
 
 
     }
