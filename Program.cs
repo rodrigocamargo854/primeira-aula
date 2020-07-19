@@ -6,10 +6,41 @@ namespace Program
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using System.Globalization;
+
     class Program
     {
         static void Main(string[] args)
         {
+            
+            while (true)
+            {
+                var counterT = 1;
+                var tabuada = 0;
+                var i = 0;
+                Console.Write($"Digite um número para o cálculo da tabuada: ");
+                tabuada = int.Parse(Console.ReadLine());
+
+
+                if (tabuada == -1)
+                {
+                    break;
+                }
+
+
+                while (i <= 10)
+                {
+
+                    Console.WriteLine($"{tabuada} x {i} = {tabuada * i} ");
+                    Console.ReadKey();
+
+                    i++;
+
+                }
+
+
+            }
+
 
 
         }
@@ -408,6 +439,51 @@ namespace Program
 
 
             static void exercicse16()
+
+            {
+
+                double salarioBruto = 0.0;
+
+                Console.Write("Salário Bruto:  ");
+                //usa-se o cultureinfo para aceitar tanto , como .(em qualquer idioma)
+                salarioBruto = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                if (salarioBruto <= 600.0)
+                {
+                    Console.WriteLine("ISENTO de IMPOSTO");
+                }
+
+
+                else if (salarioBruto > 600.0 && salarioBruto <= 1000.0)
+                {
+                    Console.WriteLine($"SALÁRIO LÍQUIDO : R${(salarioBruto - (0.2 * salarioBruto)).ToString("f2")}");
+                }
+
+                else if (salarioBruto > 1200.0 && salarioBruto <= 2000.0)
+                {
+                    Console.WriteLine($"SALÁRIO LÍQUIDO : R${(salarioBruto - (0.25 * salarioBruto)).ToString("f2")}");
+                }
+                else if (salarioBruto > 2000.0)
+                {
+                    Console.WriteLine($"SALÁRIO LÍQUIDO : R${(salarioBruto - (0.3 * salarioBruto)).ToString("f2")}");
+                }
+                Console.ReadKey();
+
+
+            }
+
+            static void exercicse17()
+
+            {
+
+
+
+
+
+            }
+
+
+            static void exercicse18()
 
             {
 
