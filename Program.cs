@@ -1,130 +1,37 @@
 ﻿
 namespace Program
 {
-
+    using System.Globalization;
     using System;
     class Program
     {
 
-
         static void Main(string[] args)
         {
-            var pass = "Pa$$word";
-            var Cands = new string[2];
+            var number1 = 0;
+            var number2 = 0;
+            bool isMultiple = true;
 
-            int cand1Count = 0;
-            int cand2Count = 0;
-            int idCount = 0;
+            Console.WriteLine("Number 1 : ");
+            number1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Number 2 : ");
+            number2 = int.Parse(Console.ReadLine());
 
-            while (true)
+            isMultiple = number1 % number2 == 0;
+
+            if(isMultiple)
             {
-                Console.WriteLine("Digite uma opção:\n");
-                Console.WriteLine(" 1-Cadastrar\n 2-Votação\n 3-Apuração\n 0-Sair ");
-                var option = int.Parse(Console.ReadLine());
-
-                if (option == 1)
-                {
-                    Console.Write("Password :");
-                    pass = Console.ReadLine();
-
-                    if (pass == "Pa$$word")
-                    {
-                        Console.Write("Nome Candidato1 : ");
-                        Cands[0] = Console.ReadLine();
-                        Console.Write("Nome Candidato2 : ");
-                        Cands[1] = Console.ReadLine();
-                        
-                        
-
-                    }
-                    else
-                    {
-                        Console.Write("Password errado ");
-                        Console.Write("Tente novamente ");
-                        Console.ReadKey();
-                    }
-                    Console.Clear();
-
-                }
-
-                else if (option == 2)
-                {
-                    while (true)
-                    {
-                        Console.WriteLine("***Votação***");
-                        Console.WriteLine($" Escolha 1 para {Cands[0]}\n Escolha 2 para {Cands[1]}\n Escolha 3 para SAIR ");
-                        idCount = int.Parse(Console.ReadLine());
-
-                        if (idCount == 1)
-                        {
-                            cand1Count++;
-                            Console.Write($"Voto Computado");
-                            Console.ReadKey();
-
-                        }
-                        else if (idCount == 2)
-                        {
-                            cand2Count++;
-                            Console.Write($"Voto Computado");
-                            Console.ReadKey();
-
-                        }
-                        else if (idCount == 3)
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("***Opção inválida - voltando menu inicial***");
-                        }
-                        Console.Clear();
-                    }
-
-                }
-
-                else if (option == 3)
-                {
-
-                    if (cand1Count > cand2Count)
-                    {
-                        Console.Write($"{Cands[0]}  venceu!!   ");
-                        Console.ReadKey();
-                        Console.Clear();
-                    }
-
-                    else if (cand2Count > cand1Count)
-                    {
-                        Console.Write($"{Cands[1]}  venceu!!   ");
-                        Console.ReadKey();
-                        Console.Clear();
-                    }
-
-                    else if (cand2Count !=0 && (cand1Count == cand2Count) )
-                    {
-                        Console.Write(" SEGUNDO TURNO \n");
-                        Console.ReadKey();
-                        Console.Clear();
-                    }
-
-                    else if (  cand2Count == 0 && cand1Count == 0 )
-                    {
-                        Console.Write("Não há votos para Apurar ");
-                        Console.ReadKey();
-                        break;
-
-                    }
-
-
-                }
-                else if (option == 0)
-                {
-
-                    Console.WriteLine("****FIM DO PROGRAMA *****");
-                    Console.ReadKey();
-                    break;
-                }
+                Console.WriteLine($">> {number1} << it´s multiple of >> {number2} << !");
 
             }
+            else
+            {
+                Console.WriteLine($">> {number1} << it´s not multiple of >> {number2} << !");
+
+            }
+
+
+
 
 
         }
@@ -249,7 +156,27 @@ namespace Program
 
         static void exercise7()
         {
+            int numberCigarsDay = 0;
+            var cigarYears = 0;
+            double price = 0.0;
+            double calcPreco = 0.0;
 
+            Console.WriteLine("##CALCULO DE GASTO  POR FUMANTE###");
+            Console.ReadKey();
+
+            Console.Write("Anos de fumante: ");
+            cigarYears = Int32.Parse(Console.ReadLine());
+            Console.Write("Cigarros por dia: ");
+            numberCigarsDay = int.Parse(Console.ReadLine());
+            Console.Write("Preço da Carteira: ");
+
+            // coleto o valor e já efetuo o cálculo total.
+            price = ((double.Parse(Console.ReadLine())) / 20) / 10;
+
+            calcPreco = (price * numberCigarsDay) * 365;// 1 ano
+            var total = calcPreco * cigarYears;
+
+            Console.WriteLine($"Custo  em {cigarYears.ToString()} anos com cigarros , R$ {total.ToString("f2")} reais");
 
         }
 
