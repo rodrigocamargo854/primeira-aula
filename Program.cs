@@ -12,35 +12,26 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            
-            while (true)
+
+            double precoMaca = 1.0;
+            int numbApples = 0;
+
+            Console.Write("Digite o número de maçãs a serem compradas: ");
+            numbApples = int.Parse(Console.ReadLine());
+
+
+            if (numbApples < 12)
             {
-                var counterT = 1;
-                var tabuada = 0;
-                var i = 0;
-                Console.Write($"Digite um número para o cálculo da tabuada: ");
-                tabuada = int.Parse(Console.ReadLine());
-
-
-                if (tabuada == -1)
-                {
-                    break;
-                }
-
-
-                while (i <= 10)
-                {
-
-                    Console.WriteLine($"{tabuada} x {i} = {tabuada * i} ");
-                    Console.ReadKey();
-
-                    i++;
-
-                }
-
-
+                precoMaca = 1.30;
+                Console.WriteLine($" Valor a pagar R${numbApples* precoMaca}");
             }
 
+            else if (numbApples >= 12)
+            {
+                Console.WriteLine($" Valor a pagar R${numbApples* precoMaca}");
+            }
+
+            Console.ReadKey();
 
 
         }
@@ -475,10 +466,34 @@ namespace Program
             static void exercicse17()
 
             {
+                while (true)
+                {
+                    var counterT = 1;
+                    var tabuada = 0;
+                    var i = 0;
+                    Console.Write($"Digite um número para o cálculo da tabuada: ");
+                    tabuada = int.Parse(Console.ReadLine());
 
 
+                    if (tabuada == -1)
+                    {
+                        Console.WriteLine("### IT'S DONE!! ###");
+                        Console.ReadKey();
+                        break;
+                    }
 
 
+                    while (i <= 10)
+                    {
+
+                        Console.WriteLine($"{tabuada} x {i} = {tabuada * i} ");
+                        Console.ReadKey();
+
+                        i++;
+
+                    }
+
+                }
 
             }
 
@@ -486,6 +501,8 @@ namespace Program
             static void exercicse18()
 
             {
+
+
 
 
             }
