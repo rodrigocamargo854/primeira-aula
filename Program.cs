@@ -154,6 +154,7 @@ namespace primeira_aula
                 var cand2 = 0;
                 var counter = 0;
                 var opcao = 0;
+                var pass = " ";
 
                 while (true)
 
@@ -166,26 +167,33 @@ namespace primeira_aula
                     if (option == 1)
 
                     {
+                        Console.WriteLine("Digite a senha para cadastrar!");
+                        pass = Console.ReadLine();
+
+                        if (pass == "Pa$$w0rd")
+                        {
+
                         while (counter < 2)
 
                         {
-                            System.Console.Write("Candidato : ");
+                            Console.Write("Candidato : ");
                             names[counter] = Console.ReadLine();
 
                             counter++;
                             Console.Clear();
-
-
+                        
                         }
 
+                        }
+                        Console.Clear();
+
                     }
+
                     else if (option == 2)
 
                     {
                         while (true)
                         {
-
-
 
                             Console.WriteLine($"Digite 1 para {names[0]}\n Digite 2 para {names[1]}\n Digite 3 para encerrar a votação");
                             opcao = int.Parse(Console.ReadLine());
@@ -196,7 +204,6 @@ namespace primeira_aula
                                 cand1++;
                                 Console.WriteLine($"Voto registrado, obrigado!");
                                 Console.Clear();
-
 
                             }
                             else if (opcao == 2)
@@ -247,7 +254,7 @@ namespace primeira_aula
                     else if (option == 0)
 
                     {
-                        Console.WriteLine("Fim do Progama ");
+                        Console.WriteLine("Fim do Programa ");
                         break;
                     }
                 }
@@ -645,8 +652,7 @@ namespace primeira_aula
         static void Main(string[] args)
         {
 
-//inserir o nome do metodo de cada exercicio aq
-
+          Exercise6();
         }
     }
 }
