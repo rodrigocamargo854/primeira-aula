@@ -147,118 +147,116 @@ namespace primeira_aula
 
         static void Exercise6()
         {
+            var pass = "Pa$$word";
+            var Cands = new string[2];
+
+            int cand1Count = 0;
+            int cand2Count = 0;
+            int idCount = 0;
+
             while (true)
             {
-                var names = new string[2];
-                var cand1 = 0;
-                var cand2 = 0;
-                var counter = 0;
-                var opcao = 0;
-                var pass = " ";
+                Console.WriteLine("Digite uma opção:\n");
+                Console.WriteLine(" 1-Cadastrar\n 2-Votação\n 3-Apuração\n 0-Sair ");
+                var option = int.Parse(Console.ReadLine());
 
-                while (true)
-
+                if (option == 1)
                 {
-                    Console.WriteLine("Digite uma opção:");
-                    Console.WriteLine("1-Cadastrar\n 2-Votação\n 3-Apuração\n 0-Sair ");
-                    var option = int.Parse(Console.ReadLine());
+                    Console.Write("Password :");
+                    pass = Console.ReadLine();
+
+                    if (pass == "Pa$$word")
+                    {
+                        Console.Write("Nome Candidato1 : ");
+                        Cands[0] = Console.ReadLine();
+                        Console.Write("Nome Candidato2 : ");
+                        Cands[1] = Console.ReadLine();
+
+                    }
+                    else
+                    {
+                        Console.Write("Password errado ");
+                        Console.Write("Tente novamente ");
+                        Console.ReadKey();
+                    }
                     Console.Clear();
 
-                    if (option == 1)
+                }
 
+                else if (option == 2)
+                {
+                    while (true)
                     {
-                        Console.WriteLine("Digite a senha para cadastrar!");
-                        pass = Console.ReadLine();
+                        Console.WriteLine("***Votação***");
+                        Console.WriteLine($" Escolha 1 para {Cands[0]}\n Escolha 2 para {Cands[1]}\n Escolha 3 para SAIR ");
+                        idCount = int.Parse(Console.ReadLine());
 
-                        if (pass == "Pa$$w0rd")
+                        if (idCount == 1)
                         {
+                            cand1Count++;
 
-                        while (counter < 2)
-
-                        {
-                            Console.Write("Candidato : ");
-                            names[counter] = Console.ReadLine();
-
-                            counter++;
-                            Console.Clear();
-                        
                         }
+                        else if (idCount == 2)
+                        {
+                            cand2Count++;
 
+                        }
+                        else if (idCount == 3)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("***Opção inválida - voltando menu inicial***");
                         }
                         Console.Clear();
-
                     }
 
-                    else if (option == 2)
-
-                    {
-                        while (true)
-                        {
-
-                            Console.WriteLine($"Digite 1 para {names[0]}\n Digite 2 para {names[1]}\n Digite 3 para encerrar a votação");
-                            opcao = int.Parse(Console.ReadLine());
-
-                            if (opcao == 1)
-
-                            {
-                                cand1++;
-                                Console.WriteLine($"Voto registrado, obrigado!");
-                                Console.Clear();
-
-                            }
-                            else if (opcao == 2)
-
-                            {
-                                cand2++;
-                                Console.WriteLine($"Voto registrado, obrigado!");
-                                Console.Clear();
 
 
-                            }
-                            else if (opcao == 3)
-
-                            {
-                                Console.WriteLine("Votação encerrada!");
-                                Console.Clear();
-                                break;
-                            }
-
-
-                        }
-
-                    }
-                    else if (option == 3)
-
-                    {
-                        Console.WriteLine("### APURAÇÃO ###");
-
-                        if (cand1 < cand2)
-                        {
-                            Console.WriteLine($"O vencedor é {names[1]}");
-                            Console.Clear();
-
-                        }
-                        else if (cand2 < cand1)
-                        {
-                            Console.WriteLine($"O vencedor é {names[0]}");
-                            Console.Clear();
-
-                        }
-                        else if (cand2 == cand1)
-                        {
-                            Console.WriteLine($"SEGUNDO TURNO ");
-                        }
-
-                    }
-
-                    else if (option == 0)
-
-                    {
-                        Console.WriteLine("Fim do Programa ");
-                        break;
-                    }
                 }
+
+                else if (option == 3)
+                {
+                    Console.WriteLine("APURAÇÂO");
+                    Console.WriteLine("TOTAL DE VOTOS");
+                    Console.WriteLine($"{Cands[0]} votos {cand1Count} ");
+                    Console.WriteLine($"{Cands[1]} votos {cand2Count} ");
+                    Console.ReadKey();
+
+                    if (cand1Count > cand2Count)
+                    {
+                        Console.Write($"{Cands[0]}  venceu!!   ");
+                        Console.ReadKey();
+                        Console.Clear();
+                    }
+
+                    else if (cand2Count > cand1Count)
+                    {
+                        Console.Write($"{Cands[1]}  venceu!!   ");
+                        Console.ReadKey();
+                        Console.Clear();
+                    }
+
+
+
+                    else
+                    {
+                        Console.Write(" SEGUNDO TURNO \n");
+                        Console.ReadKey();
+                        Console.Clear();
+                    }
+
+                }
+                else if (option == 0)
+                {
+
+                    Console.WriteLine("****FIM DO PROGRAMA *****");
+                    break;
+                }
+
             }
+
 
         }
 
@@ -576,22 +574,29 @@ namespace primeira_aula
         static void Exercisce16()
         {
 
-             double salarioBruto = 0.0;
+            double salarioBruto = 0.0;
 
-                Console.Write ("Salário Bruto:  ");
-                //usa-se o cultureinfo para aceitar tanto , como .(em qualquer idioma)
-                salarioBruto = double.Parse (Console.ReadLine (), CultureInfo.InvariantCulture);
+            Console.Write("Salário Bruto:  ");
+            //usa-se o cultureinfo para aceitar tanto , como .(em qualquer idioma)
+            salarioBruto = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-                if (salarioBruto <= 600.0) {
-                    Console.WriteLine ("ISENTO de IMPOSTO");
-                } else if (salarioBruto > 600.0 && salarioBruto <= 1000.0) {
-                    Console.WriteLine ($"SALÁRIO LÍQUIDO : R${(salarioBruto - (0.2 * salarioBruto)).ToString("f2")}");
-                } else if (salarioBruto > 1200.0 && salarioBruto <= 2000.0) {
-                    Console.WriteLine ($"SALÁRIO LÍQUIDO : R${(salarioBruto - (0.25 * salarioBruto)).ToString("f2")}");
-                } else if (salarioBruto > 2000.0) {
-                    Console.WriteLine ($"SALÁRIO LÍQUIDO : R${(salarioBruto - (0.3 * salarioBruto)).ToString("f2")}");
-                }
-                Console.ReadKey ();
+            if (salarioBruto <= 600.0)
+            {
+                Console.WriteLine("ISENTO de IMPOSTO");
+            }
+            else if (salarioBruto > 600.0 && salarioBruto <= 1000.0)
+            {
+                Console.WriteLine($"SALÁRIO LÍQUIDO : R${(salarioBruto - (0.2 * salarioBruto)).ToString("f2")}");
+            }
+            else if (salarioBruto > 1200.0 && salarioBruto <= 2000.0)
+            {
+                Console.WriteLine($"SALÁRIO LÍQUIDO : R${(salarioBruto - (0.25 * salarioBruto)).ToString("f2")}");
+            }
+            else if (salarioBruto > 2000.0)
+            {
+                Console.WriteLine($"SALÁRIO LÍQUIDO : R${(salarioBruto - (0.3 * salarioBruto)).ToString("f2")}");
+            }
+            Console.ReadKey();
 
 
         }
@@ -599,49 +604,55 @@ namespace primeira_aula
 
         static void Exercisce17()
         {
- while (true) {
-                    var counterT = 1;
-                    var tabuada = 0;
-                    var i = 0;
-                    Console.Write ($"Digite um número para o cálculo da tabuada: ");
-                    tabuada = int.Parse (Console.ReadLine ());
+            while (true)
+            {
+                var counterT = 1;
+                var tabuada = 0;
+                var i = 0;
+                Console.Write($"Digite um número para o cálculo da tabuada: ");
+                tabuada = int.Parse(Console.ReadLine());
 
-                    if (tabuada == -1) {
-                        Console.WriteLine ("### IT'S DONE!! ###");
-                        Console.ReadKey ();
-                        break;
-                    }
+                if (tabuada == -1)
+                {
+                    Console.WriteLine("### IT'S DONE!! ###");
+                    Console.ReadKey();
+                    break;
+                }
 
-                    while (i <= 10) {
+                while (i <= 10)
+                {
 
-                        Console.WriteLine ($"{tabuada} x {i} = {tabuada * i} ");
-                        Console.ReadKey ();
+                    Console.WriteLine($"{tabuada} x {i} = {tabuada * i} ");
+                    Console.ReadKey();
 
-                        i++;
-
-                    }
+                    i++;
 
                 }
+
+            }
 
         }
 
         static void Exercisce18()
         {
 
-             double precoMaca = 1.0;
-                int numbApples = 0;
+            double precoMaca = 1.0;
+            int numbApples = 0;
 
-                Console.Write ("Digite o número de maçãs a serem compradas: ");
-                numbApples = int.Parse (Console.ReadLine ());
+            Console.Write("Digite o número de maçãs a serem compradas: ");
+            numbApples = int.Parse(Console.ReadLine());
 
-                if (numbApples < 12) {
-                    precoMaca = 1.30;
-                    Console.WriteLine ($" Valor a pagar R${numbApples* precoMaca}");
-                } else if (numbApples >= 12) {
-                    Console.WriteLine ($" Valor a pagar R${numbApples* precoMaca}");
-                }
+            if (numbApples < 12)
+            {
+                precoMaca = 1.30;
+                Console.WriteLine($" Valor a pagar R${numbApples * precoMaca}");
+            }
+            else if (numbApples >= 12)
+            {
+                Console.WriteLine($" Valor a pagar R${numbApples * precoMaca}");
+            }
 
-                Console.ReadKey ();
+            Console.ReadKey();
 
 
         }
@@ -652,7 +663,7 @@ namespace primeira_aula
         static void Main(string[] args)
         {
 
-          Exercise6();
+            Exercise6();
         }
     }
 }
