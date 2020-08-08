@@ -109,22 +109,23 @@ namespace primeira_aula
 
         static void Exercise5()
         {
+            int counter = 0;
             var womenBetween18And35 = 0;
-            for (int counter = 0; counter < 5; counter++)
+            for (int c = 0; c < 5; c++)
             {
                 System.Console.WriteLine("Digite o nome de uma mulher");
                 Console.ReadLine();
                 System.Console.WriteLine("Digite sua idade");
                 var age = Int32.Parse(Console.ReadLine());
+                bool verify = age > 17 && age < 36;
 
-                if (age > 17 && age < 36)
+                if (verify)
                 {
                     womenBetween18And35++;
                 }
             }
-
-            System.Console.WriteLine("A porcentagem de mulheres entre 18 e 35");
-            System.Console.WriteLine(womenBetween18And35 * 100 / 5);
+            Console.WriteLine("A porcentagem de mulheres entre 18 e 35");
+            Console.WriteLine(womenBetween18And35 * 100 / 5);
         }
 
         static void Exercise6()
@@ -278,7 +279,17 @@ namespace primeira_aula
             for (int i = 0; i < numbersToCompare.Length; i++)
             {
                 Console.WriteLine("Number  : ");
-                numbersToCompare[i] = double.Parse(Console.ReadLine());
+
+                try
+                {
+                    numbersToCompare[i] = double.Parse(Console.ReadLine());
+                }
+
+                catch (System.Exception)
+                {
+                    Console.WriteLine("Digite somente números por favor:");   
+                               
+                }
             }
 
             string msg = "O número ";
@@ -307,12 +318,11 @@ namespace primeira_aula
                 Console.WriteLine("Number  : ");
                 numberByZero[i] = double.Parse(Console.ReadLine());
             }
-            
+
             string msg = "Análise: ";
-            msg += verify == false ? $" Quociente {(numberByZero[0] / numberByZero[1]).ToString("F2")}" : $"Divisão por Zero" ;
-            Console.WriteLine(msg); 
-            
-           
+            msg += verify == false ? $" Quociente {(numberByZero[0] / numberByZero[1]).ToString("F2")}" : $"Divisão por Zero";
+            Console.WriteLine(msg);
+
         }
 
         static void Exercisce12()
@@ -335,30 +345,39 @@ namespace primeira_aula
             }
 
             Console.WriteLine($"A soma dos pares é {sumPairs} ");
-
         }
 
 
         static void Exercise13()
         {
-            var numbers = new int[10];
+            var j = 10;
+            var numbers = new double[j];
             var biggestNumber = 0;
 
             for (int counter = 0; counter < 10; counter++)
             {
                 Console.Write($"number : ");
-                var input = Int32.Parse(Console.ReadLine());
 
-                if (input > biggestNumber)
+                try
                 {
-                    biggestNumber = input;
-                }
-                numbers[counter] = input;
-            }
+                    var input = Int32.Parse(Console.ReadLine());
 
+                    if (input > biggestNumber)
+                    {
+                        biggestNumber = input;
+                    }
+                    numbers[counter] = input;
+                }
+                catch (System.Exception)
+                {
+                    Console.WriteLine("Digite um número por favor!");
+                    Console.ReadKey();
+                    break;
+                }
+
+            }
             Console.WriteLine($"O maior número é {biggestNumber}");
         }
-
 
         static void Exercisce14()
         {
@@ -433,7 +452,6 @@ namespace primeira_aula
             {
                 Console.WriteLine($" {counter.ToString()}º number : ");
                 numerosMultlplos.Add(num = int.Parse(Console.ReadLine()));
-
                 counter++;
             }
 
@@ -447,13 +465,11 @@ namespace primeira_aula
                 {
                     multCinco++;
                 }
-
             }
 
             Console.WriteLine($"Os multiplos de três são {multTres} ");
             Console.WriteLine($"Os multiplos de três são {multCinco} ");
             Console.ReadKey();
-
 
         }
 
@@ -539,9 +555,7 @@ namespace primeira_aula
 
         static void Main(string[] args)
         {
-            Exercise11();     
-            
-            
-         }
+        Exercisce10();
+        }
     }
 }
