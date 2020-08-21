@@ -287,8 +287,7 @@ namespace primeira_aula
 
                 catch (System.Exception)
                 {
-                    Console.WriteLine("Digite somente números por favor:");   
-                               
+                    Console.WriteLine("Digite somente números por favor:");
                 }
             }
 
@@ -350,33 +349,36 @@ namespace primeira_aula
 
         static void Exercise13()
         {
-            var j = 10;
+            var j = 3;
             var numbers = new double[j];
-            var biggestNumber = 0;
+            Double biggestNumber = 0.0;
 
-            for (int counter = 0; counter < 10; counter++)
+            for (int counter = 0; counter < j; counter++)
             {
                 Console.Write($"number : ");
+                Double input = 0.0;
 
                 try
                 {
-                    var input = Int32.Parse(Console.ReadLine());
+                    input = Double.Parse(Console.ReadLine());
 
-                    if (input > biggestNumber)
-                    {
-                        biggestNumber = input;
-                    }
-                    numbers[counter] = input;
                 }
-                catch (System.Exception)
+
+                catch (SystemException)
                 {
                     Console.WriteLine("Digite um número por favor!");
-                    Console.ReadKey();
-                    break;
+
                 }
+
+                if (input > biggestNumber)
+                {
+                    biggestNumber = input;
+                }
+                numbers[counter] = input;
 
             }
             Console.WriteLine($"O maior número é {biggestNumber}");
+
         }
 
         static void Exercisce14()
@@ -447,13 +449,12 @@ namespace primeira_aula
             int multCinco = 0;
             int multTres = 0;
 
-            while (counter < 11)
-
+            for (int i = 0; i < 11 ; i++)
             {
                 Console.WriteLine($" {counter.ToString()}º number : ");
                 numerosMultlplos.Add(num = int.Parse(Console.ReadLine()));
-                counter++;
             }
+            
 
             foreach (var c in numerosMultlplos)
             {
@@ -474,6 +475,7 @@ namespace primeira_aula
         }
 
         static void Exercisce16()
+
         {
 
             double salarioBruto = 0.0;
@@ -499,7 +501,6 @@ namespace primeira_aula
                 Console.WriteLine($"SALÁRIO LÍQUIDO : R${(salarioBruto - (0.3 * salarioBruto)).ToString("f2")}");
             }
             Console.ReadKey();
-
         }
 
         static void Exercisce17()
@@ -523,10 +524,8 @@ namespace primeira_aula
                 {
                     Console.WriteLine($"{tabuada} x {i} = {tabuada * i} ");
                     Console.ReadKey();
-
                 }
             }
-
         }
 
         static void Exercisce18()
@@ -551,11 +550,9 @@ namespace primeira_aula
             Console.ReadKey();
         }
 
-
-
         static void Main(string[] args)
         {
-        Exercisce10();
+            Exercise13();
         }
     }
 }
